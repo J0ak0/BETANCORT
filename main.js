@@ -43,10 +43,11 @@ window.addEventListener('scroll', updateHeaderSolid, { passive:true });
 
 // ===== Scroll Reveal (global)
 (function(){
-  // 1) Qué animamos (selectores comunes de todas las páginas)
   const SELECTORS = [
-    /* hero */
+    /* hero (index) */
     '.hero__inner > *', '.brandstrip img',
+    /* about hero */
+    '.about-hero__grid > *', '.about-hero__copy > *',
     /* secciones genéricas */
     '.section .section__title', '.section .lead',
     '.split__inner > *', '.split__copy > *',
@@ -56,48 +57,45 @@ window.addEventListener('scroll', updateHeaderSolid, { passive:true });
     /* industry / testimonial / blog */
     '.industry__grid > *', '.testimonial__layout > *',
     '.posts__grid > *',
+    /* about extra */
+    '.about-photo__media',
+    '.about-history__head > *', '.about-history__col > *',
+    '.about-profile__grid > *', '.profile-card', '.profile-copy > *',
+    '.callout__inner > *',
     /* footer */
     '.footer__grid--center > *', '.footer__brand', '.footer__legal', '.footer__social'
   ];
 
-  // 2) Recolecta sin duplicados
   const els = [...new Set(SELECTORS.flatMap(s => Array.from(document.querySelectorAll(s))))];
 
-  // 3) Etiqueta con clases reveal + variantes según el tipo
   els.forEach(el => {
-    if (el.closest('.reveal-off')) return;       // opt-out si querés excluir algo
+    if (el.closest('.reveal-off')) return;
     el.classList.add('reveal');
 
-    // reglas rápidas de dirección
-    if (el.matches('.split__media, .thumb, figure img')) el.classList.add('reveal--right');
-    if (el.matches('.split__copy, .hero__copy, .os-head, .kpi-copy, .about-hero *')) el.classList.add('reveal--left');
+    // direcciones por tipo
+    if (el.matches('.split__media, .thumb, figure img, .about-photo__media, .profile-card')) el.classList.add('reveal--right');
+    if (el.matches('.split__copy, .hero__copy, .os-head, .kpi-copy, .about-hero__copy, .profile-copy, .about-history__head')) el.classList.add('reveal--left');
 
-    // Si usás data-reveal, respétalo (left|right|up|zoom)
+    // data-reveal opcional
     const dr = el.getAttribute('data-reveal');
     if (dr === 'left')  el.classList.add('reveal--left');
     if (dr === 'right') el.classList.add('reveal--right');
     if (dr === 'zoom')  el.classList.add('reveal--zoom');
-    // (por defecto es "up" = translateY ya definido en .reveal)
   });
 
-  // 4) Stagger automático dentro de contenedores con muchos hijos
   const STAGGER_CONTAINERS = [
     '.grid', '.brandstrip', '.hero__ctas',
-    '.kpi-mosaic', '.kpi-strip__grid', '.industry__grid', '.posts__grid'
+    '.kpi-mosaic', '.kpi-strip__grid', '.industry__grid', '.posts__grid',
+    '.about-hero__copy', '.about-history__head', '.about-history__col', '.profile-copy', '.callout__inner'
   ];
   document.querySelectorAll(STAGGER_CONTAINERS.join(',')).forEach(c => {
     [...c.children].forEach((ch, i) => {
-      // solo si ese hijo se anima
       if (ch.classList.contains('reveal')) ch.style.transitionDelay = (i * 90) + 'ms';
     });
   });
 
-  // 5) IntersectionObserver
   const disable = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (disable){
-    els.forEach(el => el.classList.add('is-visible'));
-    return;
-  }
+  if (disable){ els.forEach(el => el.classList.add('is-visible')); return; }
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -110,3 +108,4 @@ window.addEventListener('scroll', updateHeaderSolid, { passive:true });
 
   els.forEach(el => io.observe(el));
 })();
+
