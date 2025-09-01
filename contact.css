@@ -1,6 +1,10 @@
 /* Gradiente superior suave (como las demás páginas) */
 .contact-hero{
-  padding: clamp(32px, 5vw, 56px) 0 clamp(28px, 6vw, 72px);
+  /* se mete bajo el nav */
+  margin-top: calc(var(--header-h) * -1);
+  /* compenso el contenido sumando la altura del header */
+  padding-top: calc(var(--header-h) + clamp(32px, 5vw, 64px));
+  padding-bottom: 0;
   background:
     radial-gradient(900px 340px at 6% 0%, rgba(65,114,233,.18), transparent 60%),
     radial-gradient(900px 340px at 94% 0%, rgba(65,114,233,.10), transparent 60%),

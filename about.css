@@ -2,11 +2,16 @@
 
 /* HERO */
 .about-hero{
-  padding-top: clamp(32px, 5vw, 64px);
+  /* se mete bajo el nav */
+  margin-top: calc(var(--header-h) * -1);
+  /* compenso el contenido sumando la altura del header */
+  padding-top: calc(var(--header-h) + clamp(32px, 5vw, 64px));
   padding-bottom: 0;
+
+  /* glow naranja */
   background:
-    radial-gradient(800px 300px at 12% 0%, rgba(65,114,233,.18), transparent 60%),
-    radial-gradient(800px 300px at 90% -10%, rgba(65,114,233,.10), transparent 60%),
+    radial-gradient(800px 300px at 12% 0%, rgba(248,126,39,.18), transparent 60%),
+    radial-gradient(800px 300px at 90% -10%, rgba(248,126,39,.10), transparent 60%),
     #fff;
 }
 .about-hero__grid{ display:grid; grid-template-columns: 1fr; }
