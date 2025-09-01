@@ -1,0 +1,89 @@
+/* Gradiente superior suave (como las demás páginas) */
+.contact-hero{
+  padding: clamp(32px, 5vw, 56px) 0 clamp(28px, 6vw, 72px);
+  background:
+    radial-gradient(900px 340px at 6% 0%, rgba(65,114,233,.18), transparent 60%),
+    radial-gradient(900px 340px at 94% 0%, rgba(65,114,233,.10), transparent 60%),
+    #fff;
+}
+
+/* Grid 2 columnas */
+.contact__grid{
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+}
+
+/* Texto */
+.breadcrumbs{
+  display:inline-block;
+  color: var(--accent);
+  text-decoration:none;
+  margin-bottom: 6px;
+  font-size: .95rem;
+}
+.contact__title{ margin: 0 0 6px; font: 800 clamp(26px, 5.4vw, 34px)/1.2 var(--font-sans); color: var(--text); }
+.contact__lead{ margin: 0 0 18px; color: var(--muted); }
+
+/* Formulario */
+.form{ display:grid; gap: 14px; }
+.row-2{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+.form__group{ display:grid; gap: 6px; }
+.form__group label{ font-size: .85rem; color:#6b7280; }
+
+.form input,
+.form textarea,
+.phone__cc,
+.phone__num{
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  font: inherit;
+  background: #fff;
+}
+
+/* Teléfono (selector + input) */
+.phone{ display:flex; gap:8px; }
+.phone__cc{ width: 88px; }
+
+/* Texto ayuda + radios */
+.hint{ color:#374151; font-weight:600; margin: 2px 0 4px; }
+.hint small{ color:#6b7280; font-weight:400; }
+.choices{ display:grid; gap: 8px; margin-top: 4px; }
+.choice{ display:flex; gap: 8px; align-items:center; color:#374151; }
+
+/* Política + submit */
+.form__actions{
+  display:grid;
+  gap: 12px;
+  align-items:center;
+  margin-top: 6px;
+}
+.agree{ display:flex; gap:8px; align-items:flex-start; color:#374151; }
+.policy-link{ color: var(--accent); text-decoration: underline; }
+.submit{ width: 220px; }
+
+/* Imagen derecha */
+.contact__media{
+  margin:0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.contact__media img{
+  width: 100%;
+  height: auto;
+  display:block;
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+  .contact__grid{ grid-template-columns: 1fr; }
+  .submit{ width: 100%; }
+}
+@media (max-width: 640px){
+  .row-2{ grid-template-columns: 1fr; }
+}

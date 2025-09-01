@@ -332,3 +332,33 @@ a{color:inherit}
   pointer-events: none;
 }
 
+/* ===== FIX overflow: Industry experience ===== */
+.industries .grid--3{
+  display: grid;
+  /* 3 col en desktop, 2 en tablet, 1 en mobile automáticamente,
+     sin desbordarse del viewport */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--s-6);
+}
+
+/* Evita que el contenido “fuerce” el ancho mínimo de la columna */
+.industries .card,
+.industries .thumb,
+.industries .card__title,
+.industries .card__text{
+  min-width: 0;
+}
+
+/* Imagen responsiva dentro del thumb */
+.industries .thumb{ border-radius: 12px; overflow: hidden; }
+.industries .thumb img{
+  width: 100%;
+  height: auto;            /* si querés altura fija, ver bloque de abajo */
+  display: block;
+}
+
+/* (Opcional) misma altura visual de thumbs con recorte elegante */
+@supports (aspect-ratio: 16 / 10){
+  .industries .thumb{ aspect-ratio: 16 / 10; }
+  .industries .thumb img{ height: 100%; object-fit: cover; }
+}

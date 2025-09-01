@@ -40,3 +40,5 @@ window.addEventListener('scroll', updateHeaderSolid, { passive:true });
 //   const trigger = hero.offsetHeight - header.offsetHeight;
 //   header.classList.toggle('is-scrolled', window.scrollY >= trigger);
 // }
+
+

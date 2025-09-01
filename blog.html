@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Betancort & Co</title>
+  <meta name="description" content="Insights & Ideas — artículos sobre estrategia, innovación y emprendimiento.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <!-- Fonts y estilos base del proyecto -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+  <a class="visually-hidden" href="#contenido">Saltar al contenido</a>
+
+  <!-- Header (igual al index) -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="Betancort & Co" width="148" height="28"></a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">☰</button>
+      <nav id="menu" class="nav__menu" aria-label="principal">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a class="is-active" href="blog.html">Blog</a>
+        <a href="index.html#contacto">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ================= HERO Blog ================= -->
+    <section class="blog-hero">
+      <div class="wrap blog-hero__inner">
+        <p class="eyebrow">Our blog</p>
+        <h1 class="blog-title">Insights & Ideas</h1>
+        <p class="blog-lead">Stay ahead with articles on strategy, innovation, and entrepreneurship. Discover practical advice and fresh perspectives to grow your business.</p>
+
+        <form class="sub" action="#" method="post" onsubmit="return false;">
+          <div class="sub__group">
+            <input type="email" class="sub__input" placeholder="Enter your email" aria-label="Email">
+            <button class="btn sub__btn">Subscribe</button>
+          </div>
+          <small class="sub__note">We care about your data in our <a href="#">privacy policy</a></small>
+        </form>
+      </div>
+    </section>
+
+    <!-- ================= LISTA DE POSTS ================= -->
+    <section class="section posts">
+      <div class="wrap">
+        <h2 class="section__title posts__title">All blog posts</h2>
+
+        <div class="posts__grid">
+          <!-- Post 1 -->
+          <article class="post">
+            <a class="post__thumb" href="#">
+              <img src="assets/img/hero.jpg" alt="Leadership lessons from renowned coach Bill Walsh">
+            </a>
+            <div class="post__meta">• 17 Jan 2022</div>
+            <h3 class="post__title"><a href="#">Leadership lessons from renowned coach Bill Walsh</a></h3>
+            <p class="post__excerpt">Eager to learn how a once-struggling team became a powerhouse? Uncover the strategies that fueled their legendary success.</p>
+          </article>
+
+          <!-- Post 2 -->
+          <article class="post">
+            <a class="post__thumb" href="#"><img src="assets/img/partners.jpg" alt="Exploring mental models in project management"></a>
+            <div class="post__meta">• 17 Jan 2022</div>
+            <h3 class="post__title"><a href="#">Exploring mental models in project management</a></h3>
+            <p class="post__excerpt">Mental models help clarify complex concepts, making them more accessible and actionable.</p>
+          </article>
+
+          <!-- Post 3 -->
+          <article class="post">
+            <a class="post__thumb" href="#"><img src="assets/img/tech.jpg" alt="Exploring the fundamentals of Wireframing"></a>
+            <div class="post__meta">• 17 Jan 2022</div>
+            <h3 class="post__title"><a href="#">Exploring the fundamentals of Wireframing</a></h3>
+            <p class="post__excerpt">An in-depth look at Wireframing principles and best practices. Learn from the experts in the field.</p>
+          </article>
+
+          <!-- Post 4 -->
+          <article class="post">
+            <a class="post__thumb" href="#"><img src="assets/img/research.jpg" alt="The significance of teamwork in design"></a>
+            <div class="post__meta">• 17 Jan 2022</div>
+            <h3 class="post__title"><a href="#">The significance of teamwork in design</a></h3>
+            <p class="post__excerpt">Team collaboration strengthens our designs and boosts overall project quality.</p>
+          </article>
+
+          <!-- Post 5 -->
+          <article class="post">
+            <a class="post__thumb" href="#"><img src="assets/img/smb.jpg" alt="Essential JavaScript frameworks to explore"></a>
+            <div class="post__meta">• 17 Jan 2022</div>
+            <h3 class="post__title"><a href="#">Essential JavaScript frameworks to explore</a></h3>
+            <p class="post__excerpt">JavaScript frameworks enhance development efficiency with a rich array of features.</p>
+          </article>
+
+          <!-- Post 6 -->
+          <article class="post">
+            <a class="post__thumb" href="#"><img src="assets/img/partners.jpg" alt="Podcast: Cultivating a vibrant Customer Experience Community"></a>
+            <div class="post__meta">• 17 Jan 2022</div>
+            <h3 class="post__title"><a href="#">Podcast: Cultivating a vibrant Customer Experience Community</a></h3>
+            <p class="post__excerpt">Creating a community can be straightforward; what are the first steps to take?</p>
+          </article>
+        </div>
+
+        <!-- Paginación -->
+        <nav class="pager" aria-label="Pagination">
+          <a class="pager__prev" href="#" aria-label="Previous">← Previous</a>
+          <ol class="pager__nums">
+            <li><a class="is-current" href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li aria-hidden="true">…</li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+          </ol>
+          <a class="pager__next" href="#" aria-label="Next">Next →</a>
+        </nav>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer (igual al index) -->
+  <footer class="site-footer">
+    <div class="wrap footer__grid">
+      <div>
+        <h4>Company</h4>
+        <ul class="footlist">
+          <li><a href="about.html">About us</a></li>
+          <li><a href="#">History</a></li>
+          <li><a href="#">Customers</a></li>
+          <li><a href="index.html#contacto">Contact us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul class="footlist">
+          <li><a href="services.html#">Technology</a></li>
+          <li><a href="services.html#">Biotech</a></li>
+          <li><a href="services.html#">AI</a></li>
+          <li><a href="services.html#">Smart Business</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="footlist">
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer__bar">
+      <div>BETANCORT & CO © <span id="year"></span>. All rights reserved.</div>
+      <div class="socials">
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="GitHub">GH</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+
+  <!-- Fallback mínimo por si no corre main.js -->
+  <script>
+    (function(){
+      const header = document.querySelector('.site-header');
+      const toggle = document.querySelector('.nav__toggle');
+      const menu   = document.querySelector('.nav__menu');
+      if (toggle && menu){
+        toggle.addEventListener('click', () => {
+          const open = menu.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+      function setHeader(){ header && header.classList.toggle('is-scrolled', window.scrollY > 10); }
+      setHeader(); window.addEventListener('scroll', setHeader, {passive:true});
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+/* ================= HERO ================= */
+.services-hero{
+  padding: clamp(24px,4vw,40px) 0 clamp(32px,6vw,64px);
+  background:
+    radial-gradient(800px 300px at 4% 0%, rgba(65,114,233,.18), transparent 60%),
+    radial-gradient(800px 300px at 96% 0%, rgba(65,114,233,.10), transparent 60%),
+    #fff;
+}
+.services-hero__grid{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items:center;
+}
+.sh-copy{ display:grid; gap: 16px; }
+.sh-title{ font: 700 clamp(28px,5.6vw,40px)/1.2 var(--font-sans); margin:0; color: var(--text); }
+.sh-lead{ color: var(--muted); margin:0 0 8px; max-width: 60ch; }
+.sh-media{ margin:0; border-radius:16px; overflow:hidden; box-shadow: var(--shadow); }
+.sh-media img{ width:100%; height:auto; display:block; }
+
+/* ================= KPI STRIP ================= */
+.kpi-strip{ background: var(--primary); color:#fff; }
+.kpi-strip__grid{ display:grid; grid-template-columns: repeat(4, 1fr); }
+.kpi-item{ display:grid; gap: 6px; padding: clamp(16px,3vw,24px) 18px; position:relative; }
+.kpi-item:not(:last-child)::after{
+  content:""; position:absolute; right:0; top:22%; bottom:22%; width:1px; background: rgba(255,255,255,.3);
+}
+.kpi-item .num{ font-weight:800; font-size: clamp(22px,3.6vw,34px); }
+.kpi-item .txt{ opacity:.9; font-size: .95rem; line-height:1.4; }
+
+/* ================= OUR SERVICES ================= */
+.os-intro__grid{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: clamp(24px,4vw,48px);
+  align-items:end;
+}
+.os-head{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.os-head .kicker{
+  margin:0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--accent);
+  font-size: clamp(18px,2.4vw,22px);
+}
+.os-head .section__title{ margin:0; font-size: clamp(22px,4vw,28px); }
+.os-copy{ display:grid; gap: 12px; justify-items:start; }
+.os-copy p{ margin:0; color: var(--muted); }
+.btn.small{ padding: 8px 14px; border-radius: 9999px; }
+
+/* ================= SERVICES GRID (6) ================= */
+.services-grid .s-card{ gap: 10px; }
+.services-grid .icon{ width:34px; height:34px; border-radius:10px; }
+.services-grid .card__title{ font-size: 1rem; }
+.services-grid .card__text{ font-size:.95rem; }
+
+/* ================= INDUSTRY ================= */
+.industry__grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px,3vw,24px);
+}
+.glow{ position:relative; }
+.glow::before{
+  content:""; position:absolute; inset:-2px; border-radius: var(--radius);
+  background: radial-gradient(40% 60% at 50% 0%, rgba(59,130,246,.35), transparent 60%);
+  filter: blur(10px);
+  z-index:-1;
+}
+
+/* ================= TESTIMONIAL ================= */
+.services-testimonial .testimonial__layout{ grid-template-columns: .9fr 1.1fr; }
+
+/* ================= RESPONSIVE ================= */
+@media (max-width:1024px){
+  .services-hero__grid,
+  .os-intro__grid{ grid-template-columns: 1fr; }
+
+  .kpi-strip__grid{ grid-template-columns: repeat(2, 1fr); }
+  .industry__grid{ grid-template-columns: 1fr; }
+}
+@media (max-width:640px){
+  .kpi-strip__grid{ grid-template-columns: 1fr; }
+}

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Betancort & Co</title>
+  <meta name="description" content="We’d love to hear from you. Please fill out this form." />
+
+  <!-- Tipografías (Inter + Playfair) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+  <!-- Estilos globales + específicos -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+  <a class="visually-hidden" href="#contenido">Saltar al contenido</a>
+
+  <!-- ================= HEADER (igual al index) ================= -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.svg" alt="Betancort & Co" width="148" height="28">
+      </a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">☰</button>
+      <nav id="menu" class="nav__menu" aria-label="principal">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html">Blog</a>
+        <a class="is-active" href="contact.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- ================= CONTACT ================= -->
+    <section class="contact-hero">
+      <div class="wrap contact__grid">
+        <!-- Columna izquierda: texto + form -->
+        <div class="contact__copy">
+          <a class="breadcrumbs" href="#">Contact us</a>
+          <h1 class="contact__title">Get in touch</h1>
+          <p class="contact__lead">We’d love to hear from you. Please fill out this form.</p>
+
+          <form class="form" action="#" method="post" onsubmit="return false;">
+            <!-- Nombre / Apellido -->
+            <div class="row-2">
+              <div class="form__group">
+                <label for="fname">First name</label>
+                <input id="fname" name="fname" type="text" placeholder="First name" required>
+              </div>
+              <div class="form__group">
+                <label for="lname">Last name</label>
+                <input id="lname" name="lname" type="text" placeholder="Last name" required>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form__group">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@company.com" required>
+            </div>
+
+            <!-- Teléfono -->
+            <div class="form__group">
+              <label for="phone">Phone number</label>
+              <div class="phone">
+                <select class="phone__cc" aria-label="Country code">
+                  <option>US</option>
+                  <option>AR</option>
+                  <option>UY</option>
+                  <option>ES</option>
+                </select>
+                <input id="phone" name="phone" type="tel" class="phone__num" placeholder="+1 (555) 000-0000">
+              </div>
+            </div>
+
+            <!-- Mensaje -->
+            <div class="form__group">
+              <label for="msg">How Can We Help? Tell Us What You Are Looking For</label>
+              <textarea id="msg" name="msg" placeholder=""></textarea>
+            </div>
+
+            <!-- Más rápido -->
+            <div class="form__group">
+              <div class="hint">Want Faster Service?<br><small>Click Here And We’ll Send You a Calendly Link</small></div>
+              <div class="choices">
+                <label class="choice"><input type="radio" name="speed" value="fast"> <span>Absolutely. Let’s Move Fast</span></label>
+                <label class="choice"><input type="radio" name="speed" value="connect"> <span>Not Quite. Let’s Connect First</span></label>
+              </div>
+            </div>
+
+            <!-- Política + submit -->
+            <div class="form__actions">
+              <label class="agree">
+                <input type="checkbox" required>
+                <span>You agree to our friendly <a class="policy-link" href="#">privacy policy</a>.</span>
+              </label>
+
+              <button class="btn submit" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Columna derecha: imagen -->
+        <figure class="contact__media">
+          <img src="assets/img/contact.png" alt="Desk photo with laptop and plant">
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER (igual al index) ================= -->
+  <footer class="site-footer">
+    <div class="wrap footer__grid">
+      <div>
+        <h4>Company</h4>
+        <ul class="footlist">
+          <li><a href="about.html">About us</a></li>
+          <li><a href="#">History</a></li>
+          <li><a href="#">Customers</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul class="footlist">
+          <li><a href="services.html#">Technology</a></li>
+          <li><a href="services.html#">Biotech</a></li>
+          <li><a href="services.html#">AI</a></li>
+          <li><a href="services.html#">Smart Business</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="footlist">
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer__bar">
+      <div>BETANCORT & CO © <span id="year"></span>. All rights reserved.</div>
+      <div class="socials">
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="GitHub">GH</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS global -->
+  <script src="main.js"></script>
+
+  <!-- Fallback mínimo por si no corre main.js (toggle + header sólido) -->
+  <script>
+    (function(){
+      const header = document.querySelector('.site-header');
+      const toggle = document.querySelector('.nav__toggle');
+      const menu   = document.querySelector('.nav__menu');
+      if (toggle && menu){
+        toggle.addEventListener('click', () => {
+          const open = menu.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+      function setHeader(){ header && header.classList.toggle('is-scrolled', window.scrollY > 10); }
+      setHeader(); window.addEventListener('scroll', setHeader, {passive:true});
+    })();
+  </script>
+</body>
+</html>
