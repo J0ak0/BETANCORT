@@ -227,44 +227,64 @@
 
   </main>
 
-  <!-- ================= FOOTER (igual al index) ================= -->
-  <footer class="site-footer">
-    <div class="wrap footer__grid">
-      <div>
-        <h4>Company</h4>
-        <ul class="footlist">
-          <li><a href="about.html">About us</a></li>
-          <li><a href="#">History</a></li>
-          <li><a href="#">Customers</a></li>
-          <li><a href="index.html#contacto">Contact us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Product</h4>
-        <ul class="footlist">
-          <li><a href="services.html#">Technology</a></li>
-          <li><a href="services.html#">Biotech</a></li>
-          <li><a href="services.html#">AI</a></li>
-          <li><a href="services.html#">Smart Business</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Explore</h4>
-        <ul class="footlist">
-          <li><a href="index.html#blog">Blog</a></li>
-        </ul>
-      </div>
+  <!-- ================= FOOTER ================= -->
+<footer class="site-footer site-footer--v2">
+  <div class="wrap footer__grid footer__grid--center">
+    <div>
+      <h4>Company</h4>
+      <ul class="footlist">
+        <li><a href="about.html">About us</a></li>
+        <li><a href="#">History</a></li>
+        <li><a href="#">Customers</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
     </div>
 
-    <div class="wrap footer__bar">
-      <div>BETANCORT & CO © <span id="year"></span>. All rights reserved.</div>
-      <div class="socials">
-        <a href="#" aria-label="Twitter">𝕏</a>
-        <a href="#" aria-label="LinkedIn">in</a>
-        <a href="#" aria-label="GitHub">GH</a>
-      </div>
+    <div>
+      <h4>Product</h4>
+      <ul class="footlist">
+        <li><a href="services.html#">Technology</a></li>
+        <li><a href="services.html#">Biotech</a></li>
+        <li><a href="services.html#">AI</a></li>
+        <li><a href="services.html#">Research</a></li>
+        <li><a href="services.html#">Smart Business</a></li>
+      </ul>
     </div>
-  </footer>
+
+    <div>
+      <h4>Explore</h4>
+      <ul class="footlist">
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- logo centrado -->
+  <div class="wrap footer__brand">
+    <img src="assets/img/logo.svg" alt="BETANCORT & CO" width="300" height="34">
+  </div>
+
+  <!-- copyright centrado -->
+  <div class="wrap footer__legal">
+    © <span id="year"></span>. All rights reserved.
+  </div>
+
+  <!-- redes centradas -->
+  <div class="wrap footer__social">
+    <a href="#" class="ico" aria-label="Facebook">
+      <!-- FB -->
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M15 8h-2a1 1 0 0 0-1 1v2h3l-.5 3h-2.5v8h-3v-8H7v-3h2v-2.5A3.5 3.5 0 0 1 12.5 5H15v3z" fill="currentColor"/></svg>
+    </a>
+    <a href="#" class="ico" aria-label="Twitter">
+      <!-- X/Twitter -->
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M17.5 3h-3.1l-3.1 4.4L7.9 3H3.5l6 8.2L3 21h3.1l4.3-6.1L15.8 21H20l-6.6-9.1L20 3z" fill="currentColor"/></svg>
+    </a>
+    <a href="#" class="ico" aria-label="Instagram">
+      <!-- IG -->
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="none" fill="currentColor" opacity=".12"/><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5-2a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" fill="currentColor"/></svg>
+    </a>
+  </div>
+</footer>
 
   <!-- JS global del proyecto -->
   <script src="main.js"></script>

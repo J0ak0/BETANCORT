@@ -450,3 +450,40 @@ a{color:inherit}
 @media (max-width: 640px){
   .kpi-mosaic{ grid-template-columns: 1fr; }
 }
+
+
+/* ===== Footer v2 centrado en el medio ===== */
+.footer__grid--center{
+  display: grid;
+  /* columnas con ancho propio, NO 1fr */
+  grid-template-columns: repeat(3, 160px);   /* 220–260px también sirve */
+  column-gap: clamp(32px, 5vw, 72px);
+
+  /* que el grid no se estire: ancho = contenido */
+  width: fit-content;
+  margin-inline: auto;                        /* centro en el wrap */
+
+  justify-content: center;                   /* por las dudas */
+  justify-items: start;                      /* texto alineado a la izq */
+}
+
+/* resto igual */
+.site-footer--v2 h4{ margin:0 0 var(--s-3); color:var(--text); font-weight:600; letter-spacing:.2px; }
+.site-footer--v2 .footlist{ list-style:none; padding:0; margin:0; display:grid; gap:10px; }
+.site-footer--v2 .footlist a{ color:#9CA3AF; text-decoration:none; }
+.site-footer--v2 .footlist a:hover{ color:var(--text); }
+
+.footer__brand{ display:flex; justify-content:center; padding:var(--s-8) 0 var(--s-4); }
+.footer__legal{ text-align:center; color:#6B7280; margin-bottom:var(--s-4); }
+.footer__social{ display:flex; justify-content:center; gap:18px; color:#6B7280; padding-bottom:var(--s-8); }
+.footer__social .ico:hover{ color:#111827; }
+
+/* Responsive: 1 columna centrada */
+@media (max-width: 768px){
+  .footer__grid--center{
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 420px;           /* para que no se haga demasiado ancho */
+    row-gap: var(--s-6);
+  }
+}
