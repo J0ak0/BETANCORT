@@ -1,0 +1,199 @@
+/* =======================
+
+/* Ajustes de contenedor por viewport (mejor escala en 4K/ultrawide) */
+@media (min-width: 1440px){
+  :root{ --container: 1280px; }
+}
+@media (min-width: 1728px){
+  :root{ --container: 1380px; }
+}
+@media (min-width: 1920px){
+  :root{ --container: 1480px; }
+}
+@media (min-width: 2560px){
+  :root{ --container: 1640px; }
+}
+
+/* iPhone con notch: respeta áreas seguras en header/footer */
+@supports (padding: max(0px)){
+  .site-header{ padding-left: max(var(--s-6), env(safe-area-inset-left)); padding-right: max(var(--s-6), env(safe-area-inset-right)); }
+  .footer__bar, .footer__social, .footer__brand, .footer__legal{ padding-left: max(var(--s-6), env(safe-area-inset-left)); padding-right: max(var(--s-6), env(safe-area-inset-right)); }
+}
+
+/* === TIPOGRAFÍA Y BOTONES EN MÓVIL PEQUEÑO === */
+@media (max-width: 480px){
+  .wrap{ padding: 0 var(--s-5); }
+  .btn{ width: 100%; text-align: center; }
+  .hero__ctas{ gap: var(--s-3); }
+}
+
+/* =======================
+   NAVBAR
+   ======================= */
+@media (max-width: 768px){
+  .nav{ padding: var(--s-4) 0; }
+  .nav__toggle{ display: inline-block; }
+  .nav__menu{
+    display: none;
+    position: absolute; inset-inline: 0; top: calc(var(--header-h) - 8px);
+    background: rgba(255,255,255,.98);
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 10px 30px rgba(0,0,0,.06);
+    padding: var(--s-4) var(--s-6);
+  }
+  .nav__menu.is-open{ display: flex; flex-direction: column; gap: var(--s-4); }
+  .site-header.is-scrolled{ backdrop-filter: saturate(160%) blur(6px); }
+}
+
+/* =======================
+   HERO (cualquier variante)
+   ======================= */
+@media (max-width: 1024px){
+  .hero__inner{ grid-template-columns: 1fr; gap: var(--s-6); text-align: center; }
+  .hero__ctas{ justify-content: center; }
+}
+@media (max-width: 640px){
+  .brandstrip{ gap: var(--s-5); }
+  .brandstrip img{ height: 26px; }
+}
+
+/* =======================
+   SPLIT (About/Index/Services)
+   ======================= */
+@media (max-width: 1024px){
+  .split__inner{ grid-template-columns: 1fr; align-items: start; }
+  .split__media{ height: auto; }
+  .split__media img{ height: auto; object-fit: cover; }
+}
+
+/* =======================
+   KPI STRIP & KPI SPLIT
+   ======================= */
+/* Tira de KPIs horizontales (services) */
+@media (max-width: 1024px){
+  .kpi-strip__grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px){
+  .kpi-strip__grid{ grid-template-columns: 1fr; }
+}
+
+/* Mosaico 2×2 + copy (index) */
+@media (max-width: 1024px){
+  .kpi-split__grid{ grid-template-columns: 1fr; gap: var(--s-6); }
+}
+@media (max-width: 640px){
+  .kpi-mosaic{ grid-template-columns: 1fr; }
+  .kpi-card{ padding: 16px; }
+}
+
+/* =======================
+   INDUSTRY EXPERIENCE
+   ======================= */
+@media (max-width: 1024px){
+  .industry__grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px){
+  .industry__grid{ grid-template-columns: 1fr; }
+}
+
+/* =======================
+   TESTIMONIAL
+   ======================= */
+@media (max-width: 1024px){
+  .testimonial__layout{ grid-template-columns: 1fr; }
+  .testimonial__card{ text-align: center; }
+}
+
+/* =======================
+   SERVICES PAGE (hero + intro)
+   ======================= */
+@media (max-width: 1024px){
+  .services-hero__grid{ grid-template-columns: 1fr; }
+  .os-intro__grid{ grid-template-columns: 1fr; align-items: start; }
+}
+@media (max-width: 640px){
+  .services-grid .grid--3,
+  .cards--milestones{ grid-template-columns: 1fr !important; }
+}
+
+/* =======================
+   ABOUT PAGE
+   ======================= */
+@media (max-width: 1024px){
+  .about-hero__grid{ display: grid; grid-template-columns: 1fr; }
+  .about-photo__media{ border-radius: 14px; overflow: hidden; }
+  .about-history__grid{ display: block; }
+  .about-history__head{ display: grid; gap: var(--s-5); }
+  .about-history__col{ display: grid; gap: var(--s-4); }
+  .about-profile__grid{ display: grid; grid-template-columns: 1fr; gap: var(--s-6); }
+  .profile-card{ max-width: 520px; margin: 0 auto; border-radius: 16px; overflow: hidden; }
+  .profile-copy{ display: grid; gap: var(--s-4); }
+}
+@media (max-width: 640px){
+  .about-title{ font-size: clamp(24px, 6vw, 30px); }
+}
+
+/* =======================
+   BLOG
+   ======================= */
+@media (max-width: 1024px){
+  .posts__grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px){
+  .posts__grid{ grid-template-columns: 1fr; }
+  .post__thumb img{ height: 200px; }
+  .pager{ flex-wrap: wrap; justify-content: center; gap: 10px; }
+}
+
+/* =======================
+   CONTACT
+   ======================= */
+@media (max-width: 1024px){
+  .contact__grid{ grid-template-columns: 1fr; }
+  .submit{ width: 100%; }
+}
+@media (max-width: 640px){
+  .row-2{ grid-template-columns: 1fr; }
+}
+
+/* =======================
+   FOOTER (v2 centrado)
+   ======================= */
+@media (max-width: 1024px){
+  .footer__grid--center{ grid-template-columns: 1fr 1fr; width: 100%; max-width: 760px; margin-inline: auto; }
+}
+@media (max-width: 768px){
+  .footer__grid--center{ grid-template-columns: 1fr; max-width: 420px; row-gap: var(--s-6); }
+}
+
+/* =======================
+   ULTRA-WIDE / 4K extras
+   ======================= */
+@media (min-width: 1920px){
+  .hero--gradient{
+    background:
+      radial-gradient(1400px 700px at 50% -300px, rgba(65,114,233,.14), transparent 60%),
+      radial-gradient(1100px 520px at 90% 15%, rgba(65,114,233,.10), transparent 60%),
+      #fff;
+  }
+  .brandstrip{ gap: var(--s-8); }
+  .kpi-mosaic{ gap: var(--s-7); }
+}
+
+/* =======================
+   Retina assets (si tenés @2x)
+   ======================= */
+/* Ejemplo para el patrón del hero:
+   Colocá también bg-hero-pattern@2x.png en la misma carpeta */
+@media (min-resolution: 2dppx){
+  .hero.hero--pattern,
+  .about-hero{
+    background-image: image-set(
+      url("assets/img/bg-hero-pattern.png") 1x,
+      url("assets/img/bg-hero-pattern@2x.png") 2x
+    );
+    background-size: cover;
+    background-position: center top;
+  }
+  /* si tu CSS global vive en /style/, cambia la ruta a ../assets/img/... */
+}
