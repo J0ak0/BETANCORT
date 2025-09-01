@@ -88,7 +88,7 @@ a{color:inherit}
   position:absolute;
   /* que suba por debajo del header */
   inset: calc(-1 * var(--header-h)) 0 0 0;
-  background-image: url("assets/img/bg-hero-pattern.png");
+  background-image: url("../assets/img/bg-hero-pattern.png");
   background-repeat: no-repeat;
   background-position: center top;
   /* OPCIÓN A: llenar de lado a lado, aunque recorte un poco abajo */
@@ -328,7 +328,7 @@ a{color:inherit}
   top: 0.25em;                     /* centra verticalmente con el texto */
   width: 20px;
   height: 20px;
-  background: url("assets/img/check-circle.png") no-repeat center / contain;
+  background: url("../assets/img/check-circle.png") no-repeat center / contain;
   pointer-events: none;
 }
 
@@ -516,3 +516,5 @@ a{color:inherit}
     opacity: 1 !important;
   }
 }
+
+
