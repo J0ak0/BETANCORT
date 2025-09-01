@@ -111,7 +111,7 @@ a{color:inherit}
     #fff;
 }
 .hero__inner{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:var(--s-8);padding:var(--s-9) 0}
-.hero__title{font-size:var(--fs-700);line-height:1.08;margin:0 0 var(--s-5)}
+.hero__title{font-size:var(--fs-600);line-height:1.08;margin:0 0 var(--s-5)}
 .hero__subtitle{
   color:var(--muted);
   max-width: 60ch;
@@ -247,7 +247,7 @@ a{color:inherit}
 }
 
 .kicker_hero{
-  font-size:var(--fs-700);
+  font-size:var(--fs-600);
   letter-spacing:1px;
 }
 
@@ -485,5 +485,34 @@ a{color:inherit}
     width: 100%;
     max-width: 420px;           /* para que no se haga demasiado ancho */
     row-gap: var(--s-6);
+  }
+}
+
+/* ===== Scroll Reveal (global) ===== */
+.reveal{
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    transform .8s cubic-bezier(.2,.65,.2,1),
+    opacity .8s ease-out;
+  will-change: transform, opacity;
+}
+
+.reveal.is-visible{
+  opacity: 1;
+  transform: none;
+}
+
+/* variantes simples */
+.reveal--left  { transform: translateX(-28px); }
+.reveal--right { transform: translateX( 28px); }
+.reveal--zoom  { transform: scale(.96); }
+
+/* reduce motion: desactiva animaciones si el usuario lo pide */
+@media (prefers-reduced-motion: reduce){
+  .reveal, .reveal *{
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 }
