@@ -3,7 +3,7 @@
 > Maquetado estático a partir de Figma. Tech stack **HTML + CSS + JS** (vanilla).  
 > **Estado:** WIP (en progreso).
 
-![Preview](./assets/preview.png)
+![Preview](https://github.com/J0ak0/BETANCORT/blob/main/assets/preview.png)
 
 ---
 
