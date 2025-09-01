@@ -175,21 +175,5 @@
   <!-- JS global -->
   <script src="main.js"></script>
 
-  <!-- Fallback mínimo por si no corre main.js (toggle + header sólido) -->
-  <script>
-    (function(){
-      const header = document.querySelector('.site-header');
-      const toggle = document.querySelector('.nav__toggle');
-      const menu   = document.querySelector('.nav__menu');
-      if (toggle && menu){
-        toggle.addEventListener('click', () => {
-          const open = menu.classList.toggle('is-open');
-          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
-      }
-      function setHeader(){ header && header.classList.toggle('is-scrolled', window.scrollY > 10); }
-      setHeader(); window.addEventListener('scroll', setHeader, {passive:true});
-    })();
-  </script>
 </body>
 </html>

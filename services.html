@@ -20,9 +20,7 @@
   <!-- ================= HEADER (igual al index) ================= -->
   <header class="site-header">
     <div class="wrap nav">
-      <a class="brand" href="index.html">
-        <img src="assets/img/logo.svg" alt="Betancort & Co" width="148" height="28">
-      </a>
+      <a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="Betancort & Co" width="148" height="28"></a>
       <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">☰</button>
       <nav id="menu" class="nav__menu" aria-label="principal">
         <a href="index.html">Home</a>
@@ -290,30 +288,5 @@
   <!-- JS global del proyecto -->
   <script src="main.js"></script>
 
-  <!-- Mini-fallback por si no tenés main.js (toggle + scroll + testimonial) -->
-  <script>
-    (function(){
-      const header = document.querySelector('.site-header');
-      const toggle = document.querySelector('.nav__toggle');
-      const menu   = document.querySelector('.nav__menu');
-      if (toggle && menu){
-        toggle.addEventListener('click', () => {
-          const open = menu.classList.toggle('is-open');
-          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        });
-      }
-      function setHeader(){ header && header.classList.toggle('is-scrolled', window.scrollY > 10); }
-      setHeader(); window.addEventListener('scroll', setHeader, {passive:true});
-
-      // Testimonial simple
-      const cards = Array.from(document.querySelectorAll('.tcard'));
-      const dots  = Array.from(document.querySelectorAll('.dot'));
-      function show(i){
-        cards.forEach((c,idx)=>c.classList.toggle('is-active', idx===i));
-        dots.forEach((d,idx)=>d.classList.toggle('is-active', idx===i));
-      }
-      dots.forEach((d,idx)=>d.addEventListener('click', ()=>show(idx)));
-    })();
-  </script>
 </body>
 </html>
