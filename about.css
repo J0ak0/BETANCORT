@@ -1,0 +1,90 @@
+:root{ --about-hero-h: 56vh; }
+
+/* HERO */
+.about-hero{
+  padding-top: clamp(32px, 5vw, 64px);
+  padding-bottom: 0;
+  background:
+    radial-gradient(800px 300px at 12% 0%, rgba(65,114,233,.18), transparent 60%),
+    radial-gradient(800px 300px at 90% -10%, rgba(65,114,233,.10), transparent 60%),
+    #fff;
+}
+.about-hero__grid{ display:grid; grid-template-columns: 1fr; }
+.about-hero__copy{ max-width: 780px; padding: 56px 0 32px; }
+.about-title{ font: 700 clamp(28px,6vw,42px)/1.15 var(--font-sans); margin: 0 0 16px; color: var(--text); }
+.about-lead{ color: var(--muted); margin: 0 0 20px; max-width: 58ch; }
+.about-photo{ padding-top: 24px; }
+.about-photo__media{ margin:0; border-radius: 14px; overflow:hidden; box-shadow: var(--shadow); }
+.about-photo__media img{ width:100%; height:auto; display:block; }
+
+/* History */
+.about-history__grid{ display:block; }
+.about-history__head{ display:grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 48px); align-items:start; }
+.about-history .eyebrow{
+  font-family: var(--font-serif); font-style: italic; color: var(--accent);
+  font-size: clamp(28px,4vw,34px); margin: 0 0 16px;
+}
+.about-history__col p{ margin: 0 0 16px; color: var(--text); }
+.about-history__col p + p{ margin-top: 12px; color: var(--muted); }
+
+/* Profile */
+.about-profile__grid{ display:grid; grid-template-columns: .9fr 1.1fr; gap: clamp(32px, 4vw, 64px); align-items:start; }
+.profile-card{ margin:0; border-radius: 14px; overflow:hidden; box-shadow: var(--shadow); background: linear-gradient(180deg, #e8efff, #ffffff); display:block; }
+.profile-card img{ width:100%; height:auto; display:block; }
+.profile-copy{ display:grid; gap: 16px; }
+.profile-name{ font: 700 clamp(22px,4.5vw,28px)/1.2 var(--font-sans); margin:0; }
+.edu{ border:1px solid #eee; border-radius: 12px; padding: 16px; display:grid; gap: 12px; }
+.edu__title{ font-weight:700; display:flex; align-items:center; gap:8px; }
+.edu__icon{ width: 16px; height: 16px; background: var(--accent); border-radius:3px; display:inline-block; }
+.edu__cols{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; }
+.edu__school{ font-weight:700; font-size: .9rem; color:#111827; }
+.edu__degree{ color: var(--muted); font-size:.95rem; }
+.roles__title{ font-weight:700; margin-top: 12px; }
+.roles__list{ margin: 4px 0 0; padding-left: 18px; color: var(--muted); }
+.pill{ border-radius: 9999px; padding: 10px 18px; }
+
+/* Callout scallops */
+.callout{
+  padding: clamp(48px, 8vw, 84px) 0;
+  background: var(--primary);
+  color: #fff;
+  position: relative;
+  isolation: isolate;
+  --sc: radial-gradient(32px 32px at 50% 50%, #000 98%, transparent 100%);
+  -webkit-mask:
+    radial-gradient(32px 32px at 4% 0, #000 98%, transparent 100%),
+    radial-gradient(32px 32px at 16% 0, #000 98%, transparent 100%),
+    radial-gradient(32px 32px at 28% 0, #000 98%, transparent 100%),
+    radial-gradient(32px 32px at 40% 0, #000 98%, transparent 100%),
+    radial-gradient(32px 32px at 52% 0, #000 98%, transparent 100%),
+    radial-gradient(32px 32px at 64% 0, #000 98%, transparent 100%),
+    radial-gradient(32px 32px at 76% 0, #000 98%, transparent 100%),
+    radial-gradient(32px 32px at 88% 0, #000 98%, transparent 100%),
+    radial-gradient(32px 32px at 96% 0, #000 98%, transparent 100%),
+    radial-gradient(32px 32px at 4% 100%, #000 98%, transparent 100%),
+    radial-gradient(32px 32px at 16% 100%, #000 98%, transparent 100%),
+    radial-gradient(32px 32px at 28% 100%, #000 98%, transparent 100%),
+    radial-gradient(32px 32px at 40% 100%, #000 98%, transparent 100%),
+    radial-gradient(32px 32px at 52% 100%, #000 98%, transparent 100%),
+    radial-gradient(32px 32px at 64% 100%, #000 98%, transparent 100%),
+    radial-gradient(32px 32px at 76% 100%, #000 98%, transparent 100%),
+    radial-gradient(32px 32px at 88% 100%, #000 98%, transparent 100%),
+    radial-gradient(32px 32px at 96% 100%, #000 98%, transparent 100%);
+  -webkit-mask-composite: destination-out;
+          mask-composite: exclude;
+}
+.callout__inner{ text-align:center; max-width: 760px; }
+.callout__title{
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 4.8vw, 36px);
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+.callout__text{ margin: 0 0 16px; color: rgba(255,255,255,.9); }
+
+/* Responsive */
+@media (max-width: 1024px){
+  .about-history__head{ grid-template-columns: 1fr; }
+  .about-profile__grid{ grid-template-columns: 1fr; }
+  .edu__cols{ grid-template-columns: 1fr; }
+}
