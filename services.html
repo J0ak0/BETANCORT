@@ -27,8 +27,8 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a class="is-active" href="services.html">Services</a>
-        <a href="index.html#blog">Blog</a>
-        <a href="index.html#contacto">Contact Us</a>
+        <a href="blog.html">Blog</a>
+        <a href="contacto.html">Contact Us</a>
       </nav>
     </div>
   </header>
@@ -57,26 +57,41 @@
     </section>
 
     <!-- ================= KPI STRIP ================= -->
-    <section class="kpi-strip">
-      <div class="wrap kpi-strip__grid">
-        <div class="kpi-item">
-          <span class="num">+15</span>
-          <span class="txt">Years of multi-industry experience</span>
-        </div>
-        <div class="kpi-item">
-          <span class="num">+200</span>
-          <span class="txt">Ideas successfully launched</span>
-        </div>
-        <div class="kpi-item">
-          <span class="num">95%</span>
-          <span class="txt">Client satisfaction rate</span>
-        </div>
-        <div class="kpi-item">
-          <span class="num">12</span>
-          <span class="txt">Countries with active clients</span>
-        </div>
-      </div>
-    </section>
+    <!-- ================= KPI STRIP (mosaico + copy) ================= -->
+<section class="section kpi-split" id="impact">
+  <div class="wrap kpi-split__grid">
+    <!-- Mosaico 2×2 -->
+    <div class="kpi-mosaic">
+      <article class="kpi-card kpi-card--primary">
+        <span class="num">+15</span>
+        <p class="desc">Years of multi-industry experience</p>
+      </article>
+      <article class="kpi-card">
+        <span class="num">+200</span>
+        <p class="desc">Ideas successfully launched</p>
+      </article>
+      <article class="kpi-card">
+        <span class="num">95%</span>
+        <p class="desc">Client satisfaction rate</p>
+      </article>
+      <article class="kpi-card">
+        <span class="num">12</span>
+        <p class="desc">Countries with active clients</p>
+      </article>
+    </div>
+
+    <!-- Copy -->
+    <div class="kpi-copy">
+      <h2 class="impact__title">Impact</h2>
+      <p class="impact__lead">
+        Behind every project, there’s a story of innovation, growth, and lasting results.
+        These numbers reflect the trust our clients place in us and the outcomes we've achieved together.
+      </p>
+      <a class="btn pill" href="#contacto">Contact</a>
+    </div>
+  </div>
+</section>
+
 
     <!-- ================= OUR SERVICES (intro) ================= -->
     <section id="milestones" class="section os-intro">
@@ -144,7 +159,7 @@
 
         <div class="industry__grid">
           <article class="card card--thumb glow">
-            <figure class="thumb"><img src="assets/img/tech.jpg" alt="Technology"></figure>
+            <figure class="thumb"><img src="assets/img/tech.png" alt="Technology"></figure>
             <h3 class="card__title">Technology</h3>
             <p class="card__text">
               Our location in the heart of Silicon Valley allows us to stay up-to-date with the latest technological
@@ -154,7 +169,7 @@
           </article>
 
           <article class="card card--thumb glow">
-            <figure class="thumb"><img src="assets/img/research.jpg" alt="Research & Biotech"></figure>
+            <figure class="thumb"><img src="assets/img/research.png" alt="Research & Biotech"></figure>
             <h3 class="card__title">Research & Biotech</h3>
             <p class="card__text">
               For more than 15 years, we have been involved with small, medium, and large biotech companies in
@@ -163,7 +178,7 @@
           </article>
 
           <article class="card card--thumb glow">
-            <figure class="thumb"><img src="assets/img/smb.jpg" alt="Small Business"></figure>
+            <figure class="thumb"><img src="assets/img/smb.png" alt="Small Business"></figure>
             <h3 class="card__title">Small Business</h3>
             <p class="card__text">
               Small business owners can greatly benefit from using proven growth frameworks as long as they receive
@@ -181,14 +196,14 @@
           <div class="testimonial__card">
             <span class="kicker">TESTIMONIAL</span>
             <h3 class="card__title">Client’s Success Stories</h3>
-            <a class="btn btn--ghost" href="index.html#contacto">Join us</a>
+            <a class="btn btn--ghost" href="contact.html">Join us</a>
           </div>
 
           <div class="testimonial__slider">
             <article class="tcard is-active">
               <p class="tcard__text">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
               <div class="tcard__user">
-                <img class="avatar" src="assets/img/avatar.jpg" alt="Maxin Will" width="48" height="48">
+                <img class="avatar" src="assets/img/avatar.png" alt="Maxin Will" width="48" height="48">
                 <div><strong>Maxin Will</strong><br><span>Product Manager</span></div>
               </div>
             </article>

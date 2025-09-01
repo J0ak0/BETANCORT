@@ -362,3 +362,91 @@ a{color:inherit}
   .industries .thumb{ aspect-ratio: 16 / 10; }
   .industries .thumb img{ height: 100%; object-fit: cover; }
 }
+
+/* ===== KPI STRIP (mosaico + copy) ===== */
+.kpi-split__grid{
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;     /* mosaico izq + texto der */
+  gap: var(--s-8);
+  align-items: center;
+}
+
+/* Mosaico 2×2 */
+.kpi-mosaic{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: var(--s-6);
+}
+
+.kpi-card{
+  background: #fff;
+  border-radius: 18px;
+  padding: clamp(18px, 3vw, 28px);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 8px;
+  min-width: 0;                /* evita overflow */
+}
+
+.kpi-card .num{
+  font-weight: 800;
+  font-size: clamp(26px, 4.8vw, 44px);
+  line-height: 1.1;
+  color: #111827;
+}
+
+.kpi-card .desc{
+  margin: 0;
+  font-size: clamp(14px, 2.2vw, 18px);
+  color: var(--muted);
+}
+
+/* Card azul con glow */
+.kpi-card--primary{
+  background: var(--primary);
+  color: #fff;
+  position: relative;
+}
+.kpi-card--primary .num{ color:#fff; }
+.kpi-card--primary .desc{ color:#fff; }
+
+/* Glow grande detrás (aprox. como la imagen) */
+.kpi-card--primary::before{
+  content:"";
+  position:absolute;
+  inset: -12px -12px -20px -12px;        /* expande área del glow */
+  z-index:-1;
+  border-radius: 24px;
+  background:
+    radial-gradient(60% 70% at 50% 10%, rgba(0,0,0,.18), transparent 60%),
+    radial-gradient(60% 70% at 10% 90%, rgba(0,0,0,.12), transparent 60%);
+  filter: blur(6px);
+}
+
+/* Lado derecho (copy) */
+.impact__title{
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--accent);
+  font-size: clamp(28px, 5vw, 44px);
+  line-height: 1.1;
+  margin: 0 0 var(--s-4);
+}
+.impact__lead{
+  color: #4B5563;
+  font-size: clamp(16px, 2.2vw, 20px);
+  margin: 0 0 var(--s-6);
+  max-width: 46ch;
+}
+
+/* Botón pill para que se vea redondito como el diseño */
+.btn.pill{ border-radius: 999px; padding: 12px 22px; }
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px){
+  .kpi-split__grid{ grid-template-columns: 1fr; }
+  .impact__lead{ max-width: 60ch; }
+}
+@media (max-width: 640px){
+  .kpi-mosaic{ grid-template-columns: 1fr; }
+}
